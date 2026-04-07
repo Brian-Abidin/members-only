@@ -10,7 +10,7 @@ UsersRouter.get("/", usersController.getIndex);
 UsersRouter.get("/sign-up", usersController.getForm);
 UsersRouter.get("/failure", usersController.getFailure);
 UsersRouter.get("/log-out", passportController.logoutRequest);
-UsersRouter.post("/sign-up", passportController.encryptPassword);
+UsersRouter.post("/sign-up", passportController.createUser);
 UsersRouter.post(
   "/log-in",
   body("password").isLength({ min: 5 }),
