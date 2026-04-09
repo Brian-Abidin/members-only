@@ -25,9 +25,14 @@ async function getFailure(req, res) {
   res.render("failure");
 }
 
+async function getMessage(req, res) {
+  res.render("message");
+}
+
 module.exports = {
   getIndex,
   passwordConfirmation,
   getFailure,
-  getForm
+  getForm,
+  getMessage
 };
