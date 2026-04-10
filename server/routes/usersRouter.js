@@ -9,6 +9,7 @@ const UsersRouter = Router();
 UsersRouter.get("/", usersController.getIndex);
 UsersRouter.get("/sign-up", usersController.getForm);
 UsersRouter.get("/message", usersController.getMessage);
+UsersRouter.get("/members-form", usersController.getMembersForm);
 UsersRouter.get("/failure", usersController.getFailure);
 UsersRouter.get("/log-out", passportController.logoutRequest);
 UsersRouter.post("/sign-up", passportController.createUser);
