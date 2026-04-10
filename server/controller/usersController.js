@@ -21,6 +21,10 @@ async function getForm(req, res) {
   res.render("sign-up-form");
 }
 
+async function getMembersForm(req, res) {
+  res.render("members-form");
+}
+
 async function getFailure(req, res) {
   res.render("failure");
 }
@@ -34,5 +38,6 @@ module.exports = {
   passwordConfirmation,
   getFailure,
   getForm,
+  getMembersForm,
   getMessage
 };
