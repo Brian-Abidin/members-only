@@ -29,7 +29,7 @@ const localStratregy = new LocalStrategy(async (username, password, done) => {
   }
 });
 
-// Functions 2 and 3: sessiosn and serialization
+// Functions 2 and 3: sessions and serialization
 // not calling these functions on our own just defining them,
 // so they're used in the background for passport
 const serializeUser = (user, done) => {
