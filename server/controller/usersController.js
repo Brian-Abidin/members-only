@@ -30,7 +30,14 @@ async function getFailure(req, res) {
 }
 
 async function getMessage(req, res) {
-  res.render("message");
+  console.log(res.locals.currentUser);
+  if (res.locals.currentUser) {
+    res.render("message");
+  } else {
+    res.render("failure", {
+      errors: new Error("user is not logged in")
+    });
+  }
 }
 
 module.exports = {
