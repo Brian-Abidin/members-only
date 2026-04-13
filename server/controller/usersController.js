@@ -22,7 +22,14 @@ async function getForm(req, res) {
 }
 
 async function getMembersForm(req, res) {
-  res.render("members-form");
+  console.log(req.isAuthenticated(), "MEMBERS FORM");
+  if (req.isAuthenticated()) {
+    res.render("members-form");
+  } else {
+    res.render("failure", {
+      errors: new Error("user is not logged in")
+    });
+  }
 }
 
 async function getFailure(req, res) {
@@ -30,8 +37,8 @@ async function getFailure(req, res) {
 }
 
 async function getMessage(req, res) {
-  console.log(res.locals.currentUser);
-  if (res.locals.currentUser) {
+  console.log(req.isAuthenticated(), "GET MESSAGE");
+  if (req.isAuthenticated()) {
     res.render("message");
   } else {
     res.render("failure", {
