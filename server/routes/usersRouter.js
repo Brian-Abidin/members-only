@@ -22,16 +22,31 @@ UsersRouter.post(
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.render("failure", {
-        errors: JSON.stringify(errors)
-      });
+      console.log(errors, "ERRORS");
+      return res.render("failure");
     }
     next();
   },
-  passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/failure"
-  })
+  (req, res) => {
+    passport.authenticate("local", (err, user, info) => {
+      if (user) {
+        // If the user exists log him in:
+        req.login(user, (error) => {
+          if (error) {
+            res.send(error);
+          } else {
+            console.log("Successfully authenticated");
+            // HANDLE SUCCESSFUL LOGIN
+            res.redirect("/home");
+          }
+        });
+      } else {
+        console.log(info.message, "HERE!"); // Prints the reason of the failure
+        // HANDLE FAILURE LOGGING IN
+        res.redirect("/failure");
+      }
+    })(req, res);
+  }
 );
 
 module.exports = UsersRouter;
