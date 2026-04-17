@@ -49,8 +49,13 @@ async function getMessage(req, res) {
 }
 
 async function postMessage(req, res) {
+  console.log(req.user, "POSTED");
+  const { title } = req.body;
+  const message = req.body.message.replace(/\r?\n|\r/g, " ");
   if (req.isAuthenticated()) {
+    await db.insertMessage(req.user.username, title, message);
   }
+  res.redirect("/");
 }
 
 module.exports = {
@@ -59,5 +64,6 @@ module.exports = {
   getFailure,
   getForm,
   getMembersForm,
-  getMessage
+  getMessage,
+  postMessage
 };
