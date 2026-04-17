@@ -48,5 +48,6 @@ UsersRouter.post(
     })(req, res);
   }
 );
+UsersRouter.post("/message", usersController.postMessage);
 
 module.exports = UsersRouter;
