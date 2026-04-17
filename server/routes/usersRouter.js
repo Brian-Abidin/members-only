@@ -37,7 +37,7 @@ UsersRouter.post(
           } else {
             console.log("Successfully authenticated");
             // HANDLE SUCCESSFUL LOGIN
-            res.redirect("/home");
+            res.redirect("/");
           }
         });
       } else {
