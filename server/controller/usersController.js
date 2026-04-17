@@ -1,4 +1,5 @@
 const { body } = require("express-validator");
+const db = require("../db/queries");
 
 async function getIndex(req, res) {
   console.log(res.locals);
@@ -44,6 +45,11 @@ async function getMessage(req, res) {
     res.render("failure", {
       errors: new Error("user is not logged in")
     });
+  }
+}
+
+async function postMessage(req, res) {
+  if (req.isAuthenticated()) {
   }
 }
 
