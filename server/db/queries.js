@@ -7,6 +7,6 @@ async function insertMessage(author, title, message) {
   );
 }
 
-module.export = {
+module.exports = {
   insertMessage
 };
