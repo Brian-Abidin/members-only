@@ -7,15 +7,11 @@
 </head>
 <body>
   <h1>New Message</h1>
-  <form action="/new-message" method="POST">
+  <form action="/message" method="POST">
     <label for="title">Title</label>
     <input id="title" name="title" placeholder="title" type="text" autocomplete="off"/>
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" />
-    <label for="first-name">First Name</label>
-    <input id="first-name" name="first-name" placeholder="John" type="text" autocomplete="off"/>
-        <label for="last-name">Last Name</label>
-    <input id="last-name" name="last-name" placeholder="Smith" type="text" autocomplete="off"/>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" type="text"></textarea>
     <button type="submit">Enter</button>
   </form>
 </body>
