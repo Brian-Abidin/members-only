@@ -9,9 +9,9 @@
   <h1>New Message</h1>
   <form action="/message" method="POST">
     <label for="title">Title</label>
-    <input id="title" name="title" placeholder="title" type="text" autocomplete="off"/>
+    <input id="title" name="title" placeholder="title" type="text" autocomplete="off" required/>
     <label for="message">Message</label>
-    <textarea id="message" name="message" type="text"></textarea>
+    <textarea id="message" name="message" type="text" required></textarea>
     <button type="submit">Enter</button>
   </form>
 </body>
