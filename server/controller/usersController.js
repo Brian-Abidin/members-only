@@ -9,15 +9,6 @@ async function getIndex(req, res) {
   });
 }
 
-function passwordConfirmation() {
-  body("confirm-password").custom((value, { req }) => {
-    if (value !== req.body.password) {
-      throw new Error("Passwords do not match");
-    }
-    return true;
-  });
-}
-
 async function getForm(req, res) {
   res.render("sign-up-form");
 }
@@ -60,7 +51,6 @@ async function postMessage(req, res) {
 
 module.exports = {
   getIndex,
-  passwordConfirmation,
   getFailure,
   getForm,
   getMembersForm,
