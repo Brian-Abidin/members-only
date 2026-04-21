@@ -21,18 +21,8 @@ UsersRouter.post(
 );
 UsersRouter.post(
   "/log-in",
-  body("password").isLength({ min: 5 }),
-  body("confirm-password").custom(
-    (value, { req }) => value === req.body.password
-  ),
-  (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      console.log(errors, "ERRORS");
-      return res.render("failure");
-    }
-    next();
-  },
+  validateMiddleware.signUpValidation,
+  validateMiddleware.passwordConfirmation,
   (req, res) => {
     passport.authenticate("local", (err, user, info) => {
       if (user) {
