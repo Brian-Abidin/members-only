@@ -23,26 +23,10 @@ UsersRouter.post(
   "/log-in",
   validateMiddleware.signUpValidation,
   validateMiddleware.passwordConfirmation,
-  (req, res) => {
-    passport.authenticate("local", (err, user, info) => {
-      if (user) {
-        // If the user exists log him in:
-        req.login(user, (error) => {
-          if (error) {
-            res.send(error);
-          } else {
-            console.log("Successfully authenticated");
-            // HANDLE SUCCESSFUL LOGIN
-            res.redirect("/");
-          }
-        });
-      } else {
-        console.log(info.message, "HERE!"); // Prints the reason of the failure
-        // HANDLE FAILURE LOGGING IN
-        res.redirect("/failure");
-      }
-    })(req, res);
-  }
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/failure"
+  })
 );
 UsersRouter.post("/message", usersController.postMessage);
 
