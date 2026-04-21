@@ -7,6 +7,13 @@ async function insertMessage(author, title, message) {
   );
 }
 
+async function updateMember(username) {
+  await pool.query("UPDATE users SET is_member = true WHERE username = $1", [
+    username
+  ]);
+}
+
 module.exports = {
-  insertMessage
+  insertMessage,
+  updateMember
 };
