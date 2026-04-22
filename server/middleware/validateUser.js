@@ -1,4 +1,5 @@
 const { body, validationResult } = require("express-validator");
+require("dotenv").config();
 
 const signUpValidation = [
   body("password").isLength({ min: 5 }),
@@ -16,7 +17,27 @@ async function passwordConfirmation(req, res, next) {
   next();
 }
 
+const checkMemberCode = [
+  body("secret-code").custom((value) => {
+    if (value !== process.env.MEMBER_CODE) {
+      throw new Error("Membership code is incorrect!");
+    }
+    return true;
+  })
+];
+
+async function validMemberCode(req, res) {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    res.render("failure");
+  } else {
+    res.redirect("/");
+  }
+}
+
 module.exports = {
   signUpValidation,
-  passwordConfirmation
+  passwordConfirmation,
+  checkMemberCode,
+  validMemberCode
 };
