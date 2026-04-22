@@ -19,6 +19,7 @@ UsersRouter.post(
   validateMiddleware.passwordConfirmation,
   passportController.createUser
 );
+
 UsersRouter.post(
   "/log-in",
   validateMiddleware.signUpValidation,
@@ -28,6 +29,12 @@ UsersRouter.post(
     failureRedirect: "/failure"
   })
 );
+
 UsersRouter.post("/message", usersController.postMessage);
+UsersRouter.post(
+  "/members-form",
+  validateMiddleware.checkMemberCode,
+  validateMiddleware.validMemberCode
+);
 
 module.exports = UsersRouter;
