@@ -11,8 +11,7 @@ const signUpValidation = [
 async function passwordConfirmation(req, res, next) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log(errors, "ERRORS");
-    return res.render("failure");
+    res.render("failure");
   }
   next();
 }
