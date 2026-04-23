@@ -11,7 +11,7 @@ const signUpValidation = [
 async function passwordConfirmation(req, res, next) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    res.render("failure");
+    return res.render("failure");
   }
   next();
 }
@@ -25,13 +25,12 @@ const checkMemberCode = [
   })
 ];
 
-async function validMemberCode(req, res) {
+async function validMemberCode(req, res, next) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    res.render("failure");
-  } else {
-    res.redirect("/");
+    return res.render("failure");
   }
+  next();
 }
 
 module.exports = {
