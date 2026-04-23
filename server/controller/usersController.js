@@ -1,4 +1,3 @@
-const { body } = require("express-validator");
 const db = require("../db/queries");
 
 async function getIndex(req, res) {
