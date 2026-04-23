@@ -34,7 +34,8 @@ UsersRouter.post("/message", usersController.postMessage);
 UsersRouter.post(
   "/members-form",
   validateMiddleware.checkMemberCode,
-  validateMiddleware.validMemberCode
+  validateMiddleware.validMemberCode,
+  usersController.postMembership
 );
 
 module.exports = UsersRouter;
