@@ -23,6 +23,11 @@ async function getMembersForm(req, res) {
   }
 }
 
+async function postMembership(req, res) {
+  db.updateMember(req.user.username);
+  res.redirect("/");
+}
+
 async function getFailure(req, res) {
   res.render("failure");
 }
@@ -54,5 +59,6 @@ module.exports = {
   getForm,
   getMembersForm,
   getMessage,
-  postMessage
+  postMessage,
+  postMembership
 };
