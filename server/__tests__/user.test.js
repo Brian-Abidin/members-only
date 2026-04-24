@@ -7,7 +7,7 @@ const mockUser = {
 };
 
 describe("user", () => {
-  decribe("user registration", () => {
+  describe("user registration", () => {
     describe("given the username and password are valid", () => {
       it("should log the user in", () => {});
     });
