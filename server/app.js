@@ -4,6 +4,7 @@ const path = require("node:path");
 const passport = require("passport");
 const usersRouter = require("./routes/usersRouter");
 const passportController = require("./config/passport");
+const errorController = require("./controller/errorController");
 require("dotenv").config();
 
 const app = express();
@@ -30,5 +31,6 @@ app.use(passportController.currentUser);
 
 // uses usersRouter to route all views and display them in app
 app.use("/", usersRouter);
+app.use(errorController.get404);
 
 module.exports = app;
