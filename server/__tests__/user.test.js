@@ -1,3 +1,11 @@
+const mockUser = {
+  user: "JohnWick",
+  first_name: "John",
+  last_name: "Wick",
+  password: "IloveDog123",
+  passwordConfirmation: "IloveDog123"
+};
+
 describe("user", () => {
   decribe("user registration", () => {
     describe("given the username and password are valid", () => {
@@ -13,10 +21,5 @@ describe("user", () => {
       it("should log the user in and be visible in the req.user", () => {});
     });
   });
-  // user registration
-  // user and password are validated
-  // verify that the passowrd must match
   // check the secret code
-  // test creating a user session
-  // a user can login with a valid user and password
 });
