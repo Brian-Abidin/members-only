@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`routes GET / should return 200 status and return to the home page 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+</head>
+<body>
+  
+    <h1>please log in</h1>
+    <h1>or <a href="/sign-up">sign up</a>!</h1>
+    <form action="/log-in" method="POST">
+      <label for="username">Username</label>
+      <input id="username" name="username" placeholder="username" type="text" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" />
+      <label for="confirm-password">Confirm Password:</label>
+      <input id="confirm-password" name="confirm-password" type="password">
+      <button type="submit">Log In</button>
+    </form>
+  
+
+</body>
+</html>"
+`;
