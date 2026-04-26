@@ -12,6 +12,14 @@ describe("routes", () => {
       expect(response.text).toMatchSnapshot();
     });
   });
+  describe("GET /sign-up", () => {
+    it("should return 200 status and return to the sign up page", async () => {
+      const response = await request(app).get("/sign-up");
+
+      expect(response.statusCode).toBe(200);
+      expect(response.text).toMatchSnapshot();
+    });
+  });
   describe("GET unknown route", () => {
     it("should return 404 for an unknown route", async () => {
       const response = await request(app).get("/fakeroute");
