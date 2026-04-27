@@ -2,6 +2,7 @@ const db = require("../db/queries");
 
 async function getIndex(req, res) {
   console.log(res.locals);
+  console.log(req.session, "SESSION");
   res.render("index", {
     greeting: "hello world",
     user: req.user
