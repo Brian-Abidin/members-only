@@ -1,4 +1,3 @@
-const { body, validationResult } = require("express-validator");
 const { Router } = require("express");
 const passport = require("passport");
 const usersController = require("../controller/usersController");
