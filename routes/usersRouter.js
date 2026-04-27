@@ -6,7 +6,11 @@ const validateMiddleware = require("../middleware/validateUser");
 
 const UsersRouter = Router();
 
-UsersRouter.get("/", usersController.getIndex);
+UsersRouter.get(
+  "/",
+  usersController.userPageVisitCount,
+  usersController.getIndex
+);
 UsersRouter.get("/sign-up", usersController.getForm);
 UsersRouter.get("/message", usersController.getMessage);
 UsersRouter.get("/members-form", usersController.getMembersForm);
