@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`routes GET / should return 200 status and return to the home page 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+</head>
+<body>
+  
+    <h1>please log in</h1>
+    <h1>or <a href="/sign-up">sign up</a>!</h1>
+    <form action="/log-in" method="POST">
+      <label for="username">Username</label>
+      <input id="username" name="username" placeholder="username" type="text" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" />
+      <label for="confirm-password">Confirm Password:</label>
+      <input id="confirm-password" name="confirm-password" type="password">
+      <button type="submit">Log In</button>
+    </form>
+  
+
+</body>
+</html>"
+`;
+
+exports[`routes GET /sign-up should return 200 status and return to the sign up page 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+</head>
+<body>
+  <h1>Sign Up</h1>
+  <form action="/sign-up" method="POST">
+    <label for="username">Username</label>
+    <input id="username" name="username" placeholder="username" type="text" autocomplete="off" required/>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required/>
+         <label for="confirm-password">Confirm Password:</label>
+      <input id="confirm-password" name="confirm-password" type="password">
+    <label for="first-name">First Name</label>
+    <input id="first-name" name="first-name" placeholder="John" type="text" autocomplete="off" required/>
+        <label for="last-name">Last Name</label>
+    <input id="last-name" name="last-name" placeholder="Smith" type="text" autocomplete="off"required/>
+    <button type="submit">Sign Up</button>
+  </form>
+</body>
+</html>"
+`;
