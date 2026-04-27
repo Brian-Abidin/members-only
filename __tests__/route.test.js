@@ -1,7 +1,7 @@
 // test all function that are used to render the page
 const request = require("supertest");
-const handlers = require("../../handlers");
-const app = require("../../app");
+const handlers = require("../handlers");
+const app = require("../app");
 
 describe("routes", () => {
   describe("GET /", () => {
