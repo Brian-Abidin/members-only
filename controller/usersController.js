@@ -13,9 +13,11 @@ async function getForm(req, res) {
 }
 
 async function getMembersForm(req, res) {
-  console.log(req.isAuthenticated(), "MEMBERS FORM");
+  console.log(res.locals, "MEMBERS FORM");
   if (req.isAuthenticated()) {
-    res.render("members-form");
+    res.render("members-form", {
+      member: res.locals.currentUser.is_member
+    });
   } else {
     res.render("failure", {
       errors: new Error("user is not logged in")
