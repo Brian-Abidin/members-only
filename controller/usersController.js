@@ -26,6 +26,15 @@ async function getMembersForm(req, res) {
   }
 }
 
+function userPageVisitCount(req, res, next) {
+  if (req.session.viewCount) {
+    req.session.viewCount += 1;
+  } else {
+    req.session.viewCount = 1;
+  }
+  next();
+}
+
 async function postMembership(req, res) {
   db.updateMember(req.user.username);
   res.redirect("/");
@@ -57,6 +66,7 @@ async function postMessage(req, res) {
 }
 
 module.exports = {
+  userPageVisitCount,
   getIndex,
   getFailure,
   getForm,
