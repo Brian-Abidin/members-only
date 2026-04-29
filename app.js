@@ -2,10 +2,10 @@ const expressSession = require("express-session");
 const express = require("express");
 const path = require("node:path");
 const passport = require("passport");
+const pgSession = require("connect-pg-simple")(expressSession);
 const usersRouter = require("./routes/usersRouter");
 const passportController = require("./config/passport");
 const errorController = require("./controller/errorController");
-const pgSession = require("connect-pg-simple")(expressSession);
 const pool = require("./db/pool");
 
 require("dotenv").config();
