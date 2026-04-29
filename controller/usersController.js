@@ -20,7 +20,7 @@ async function getMembersForm(req, res) {
       member: res.locals.currentUser.is_member
     });
   } else {
-    res.render("failure", {
+    res.status(401).render("failure", {
       errors: new Error("user is not logged in")
     });
   }
