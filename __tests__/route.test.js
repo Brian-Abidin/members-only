@@ -1,7 +1,7 @@
 // test all function that are used to render the page
 const request = require("supertest");
-const handlers = require("../handlers");
 const app = require("../app");
+const pool = require("../db/pool");
 
 describe("routes", () => {
   describe("GET /", () => {
@@ -27,4 +27,9 @@ describe("routes", () => {
       expect(response.statusCode).toBe(404);
     });
   });
+});
+
+// closes all connections in the pool
+afterAll(async () => {
+  await pool.end();
 });
