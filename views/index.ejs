@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-</head>
+<%- include('./partials/header')%>
 <body>
   <% if (locals.user) {%>
     <h1>WELCOME BACK <%= user.username %></h1>
