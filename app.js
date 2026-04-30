@@ -23,6 +23,9 @@ app.set("view engine", "ejs");
 // used to use static files in the public folder
 app.use(express.static(path.join(__dirname, "public")));
 
+// used to used static files in the dist folder
+app.use(express.static(path.join(__dirname, "dist")));
+
 // creating the express session and executing passport.session
 // THIS IS FROM THE EXAMPLE IN ODIN PROJECT; UPDATE FOR INDIVIDUAL PROJECT
 app.use(
