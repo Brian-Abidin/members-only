@@ -1,5 +1,4 @@
 /*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
-@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -7,11 +6,9 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-amber-50: oklch(98.7% 0.022 95.277);
-    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-green-300: oklch(87.1% 0.15 154.449);
+    --color-green-400: oklch(79.2% 0.209 151.711);
     --spacing: 0.25rem;
-    --font-weight-normal: 400;
-    --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -174,31 +171,10 @@
   .start {
     inset-inline-start: var(--spacing);
   }
-  .bg-amber-50 {
-    background-color: var(--color-amber-50);
+  .text-green-300 {
+    color: var(--color-green-300);
   }
-  .bg-gray-100 {
-    background-color: var(--color-gray-100);
-  }
-  .align-middle {
-    vertical-align: middle;
-  }
-  .font-normal {
-    --tw-font-weight: var(--font-weight-normal);
-    font-weight: var(--font-weight-normal);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-}
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-font-weight: initial;
-    }
+  .text-green-400 {
+    color: var(--color-green-400);
   }
 }
