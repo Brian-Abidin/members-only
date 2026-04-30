@@ -17,7 +17,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "jest",
-    "build:css": "postcss -i ./public/style.css -o ./dist/output.css --watch",
+    "build:css": "tailwindcss -i ./public/style.css -o ./dist/output.css --watch",
     "dev": "concurrently \"npm:build:css\" \"npm:start\""
   },
   "dependencies": {
