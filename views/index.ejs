@@ -3,22 +3,24 @@
 <%- include('./partials/header')%>
 <body>
   <% if (locals.user) {%>
-    <h1 class="text-green-300">WELCOME BACK <%= user.username %></h1>
+    <h1 class="text-green-400">WELCOME BACK <%= user.username %></h1>
     <a href="/message">new message!</a>
     <a href="/members-form">Become a member!</a>
     <a href="/log-out">LOG OUT</a>
   <% } else { %>
-    <h1 class="text-green-400">please log in</h1>
-    <h1>or <a href="/sign-up">sign up</a>!</h1>
-    <form action="/log-in" method="POST">
-      <label for="username">Username</label>
-      <input id="username" name="username" placeholder="username" type="text" />
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" />
-      <label for="confirm-password">Confirm Password:</label>
-      <input id="confirm-password" name="confirm-password" type="password">
-      <button type="submit">Log In</button>
-    </form>
+    <div class="flex align-center justify-center bg-amber-100 h-screen w-screen">
+      <h1 class="text-green-400 font-bold">please log in</h1>
+      <h1 class="text-amber-600 font-bold">or <a href="/sign-up">sign up</a>!</h1>
+      <form action="/log-in" method="POST">
+        <label for="username">Username</label>
+        <input id="username" name="username" placeholder="username" type="text" />
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" />
+        <label for="confirm-password">Confirm Password:</label>
+        <input id="confirm-password" name="confirm-password" type="password">
+        <button type="submit">Log In</button>
+      </form>
+    </div>
   <%}%>
 
 </body>
