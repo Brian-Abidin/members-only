@@ -4,3 +4,8 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @source "../views/**/*.ejs";
+
+* {
+  margin: 0;
+  padding: 0;
+}

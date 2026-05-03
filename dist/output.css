@@ -20,11 +20,11 @@
   .flex {
     display: flex;
   }
-  .h-\[150px\] {
-    height: 150px;
+  .h-screen {
+    height: 100vh;
   }
-  .w-full {
-    width: 100%;
+  .w-screen {
+    width: 100vw;
   }
   .justify-center {
     justify-content: center;
@@ -35,4 +35,8 @@
   .text-green-400 {
     color: var(--color-green-400);
   }
+}
+* {
+  margin: 0;
+  padding: 0;
 }
