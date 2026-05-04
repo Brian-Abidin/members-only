@@ -8,10 +8,10 @@
     <a href="/members-form">Become a member!</a>
     <a href="/log-out">LOG OUT</a>
   <% } else { %>
-    <div class="flex align-center justify-center bg-amber-100 h-screen w-screen">
-      <h1 class="text-green-400 font-bold">please log in</h1>
-      <h1 class="text-amber-600 font-bold">or <a href="/sign-up">sign up</a>!</h1>
-      <form action="/log-in" method="POST">
+    <div class="container px-8 bg-amber-200 h-screen">
+      <h1 class="text-green-400 font-bold bg-blue-400">please log in</h1>
+      <h1 class="text-amber-600 font-bold bg-amber-500">or <a href="/sign-up">sign up</a>!</h1>
+      <form class=" flex-wrap bg-yellow-400 m-0 p-0 max-h-40 flex items-center justify-center" action="/log-in" method="POST">
         <label for="username">Username</label>
         <input id="username" name="username" placeholder="username" type="text" />
         <label for="password">Password</label>
