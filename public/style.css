@@ -5,11 +5,6 @@
 
 @source "../views/**/*.ejs";
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.container {
+/* .container {
   margin-inline: auto;
-}
+} */

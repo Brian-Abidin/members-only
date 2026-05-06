@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/header')%>
-<body>
-  <% if (locals.user) {%>
-    <h1 class="text-green-400">WELCOME BACK <%= user.username %></h1>
-    <a href="/message">new message!</a>
-    <a href="/members-form">Become a member!</a>
-    <a href="/log-out">LOG OUT</a>
-  <% } else { %>
-    <div class="container px-8 bg-amber-200 h-screen">
-      <h1 class="text-green-400 font-bold bg-blue-400">please log in</h1>
-      <h1 class="text-amber-600 font-bold bg-amber-500">or <a href="/sign-up">sign up</a>!</h1>
-      <form class=" flex-wrap bg-yellow-400 m-0 p-0 max-h-40 flex items-center justify-center" action="/log-in" method="POST">
-        <label for="username">Username</label>
-        <input id="username" name="username" placeholder="username" type="text" />
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" />
-        <label for="confirm-password">Confirm Password:</label>
-        <input id="confirm-password" name="confirm-password" type="password">
-        <button type="submit">Log In</button>
-      </form>
-    </div>
-  <%}%>
+<%- include('./partials/head')%>
+<body class="bg-purple-200 m-0 p-0">
+  <div class="m-0 p-0 grid grid-rows-[1fr_auto] gap-0 bg-purple-500 h-screen">
+    <% if (locals.user) {%>
+      <div>
+        <h1 class="text-green-400">WELCOME BACK <%= user.username %></h1>
+        <a href="/message">new message!</a>
+        <a href="/members-form">Become a member!</a>
+        <a href="/log-out">LOG OUT</a>
+      </div>
+    <% } else { %>
+      <div class="m-0 p-0 flex items-center justify-center bg-amber-200 h-full">
+        <div class="ml-5 flex-1 grid grid-rows-2 h-full w-full">
+          <div class="flex flex-col justify-center bg-white h-full">
+            <h1 class="text-5xl">Members Only</h1>
+            <h2 class="text-3xl">Become a member today.</h2>
+          </div>
+          <div class="flex bg-red-200">
+            <h1 class="text-green-400 font-bold bg-blue-400">please log in</h1>
+            <h1 class="text-amber-600 font-bold bg-amber-500">or <a href="/sign-up">sign up</a>!</h1>
+            <form class=" flex-wrap bg-yellow-400 m-0 p-0 max-h-40 flex items-center justify-center" action="/log-in" method="POST">
+              <label for="username">Username</label>
+              <input id="username" name="username" placeholder="username" type="text" />
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" />
+              <label for="confirm-password">Confirm Password:</label>
+              <input id="confirm-password" name="confirm-password" type="password">
+              <button type="submit">Log In</button>
+            </form>
+          </div>
+        </div>
+        <div class="flex-1 bg-green-400 h-full w-full">
+          HELLO
+        </div>
+      </div>
+      <div class="bg-black h-14 flex items-center justify-center text-white">FOOTER</div>
+    <%}%>
+  </div>
 
 </body>
 </html>
