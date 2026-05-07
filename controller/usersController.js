@@ -13,6 +13,10 @@ async function getForm(req, res) {
   res.render("sign-up-form");
 }
 
+async function getLogin(req, res) {
+  res.render("log-in");
+}
+
 async function getMembersForm(req, res) {
   console.log(res.locals, "MEMBERS FORM");
   if (req.isAuthenticated()) {
@@ -70,6 +74,7 @@ module.exports = {
   getIndex,
   getFailure,
   getForm,
+  getLogin,
   getMembersForm,
   getMessage,
   postMessage,
