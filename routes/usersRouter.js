@@ -16,6 +16,7 @@ UsersRouter.get("/message", usersController.getMessage);
 UsersRouter.get("/members-form", usersController.getMembersForm);
 UsersRouter.get("/failure", usersController.getFailure);
 UsersRouter.get("/log-out", passportController.logoutRequest);
+UsersRouter.get("/log-in", usersController.getLogin);
 UsersRouter.post(
   "/sign-up",
   validateMiddleware.signUpValidation,
