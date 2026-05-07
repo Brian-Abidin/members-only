@@ -10,4 +10,17 @@
 } */
 @theme {
   --breakpoint-md: 56rem;
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  --animate-scroll: scroll 10s infinite linear;
+}
+
+@utility animation-paused {
+  animation-play-state: paused;
 }
