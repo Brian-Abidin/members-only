@@ -13,22 +13,23 @@
     <% } else { %>
       <div class="m-0 p-0 flex items-start justify-center bg-amber-200 h-screen">
         <div class=" flex-1 grid grid-rows-2 h-full w-full">
-          <div class="flex flex-col items-center justify-center bg-white h-full">
-            <h1 class="text-5xl">Members Only Club</h1>
-            <h2 class="text-3xl">Become a member today.</h2>
+          <div class="flex flex-col items-center justify-center bg-green-500 h-full">
+            <h1 class="text-5xl text-white">Members Only Club</h1>
+            <h2 class="text-3xl text-white">Become a member today.</h2>
           </div>
-          <div class="flex flex-col items-center justify-center gap-8 bg-white">
-            <a class="flex justify-center items-center no-underline bg-purple-100 w-78 h-12 rounded-xl" href="/log-in">Log In</a>
-            <a class="flex justify-center items-center no-underline bg-purple-100 w-78 h-12 rounded-xl" href="/sign-up">Create an Account</a>
-            <!-- <h1 class="text-green-400 font-bold bg-blue-400">please log in</h1>
-            <h1 class="text-amber-600 font-bold bg-amber-500">or <a href="/sign-up">sign up</a>!</h1> -->
+          <div class="flex flex-col items-center justify-center gap-8 bg-green-500">
+            <a class="flex justify-center items-center no-underline bg-green-700  text-white text-shadow-sm w-78 h-12 rounded-xl" href="/log-in">Log In</a>
+            <a class="flex justify-center items-center no-underline bg-green-700 text-white text-shadow-sm w-78 h-12 rounded-xl" href="/sign-up">Create an Account</a>
           </div>
         </div>
-        <div class="max-md:hidden flex-1 bg-green-400 h-full w-full">
-          HELLO
+        <div class="max-md:hidden flex-1 grid grid-rows-4 items-center overflow-hidden bg-green-400 h-full w-full gap-5">
+          <%- include('./partials/carousel')%>
+          <%- include('./partials/carousel-rev')%>
+          <%- include('./partials/carousel')%>
+          <%- include('./partials/carousel-rev')%>
         </div>
       </div>
-      <div class="bg-black h-14 flex items-center justify-center text-white">FOOTER</div>
+      <div class="bg-green-950 h-14 flex items-center justify-center text-white">FOOTER</div>
     <%}%>
   </div>
 
