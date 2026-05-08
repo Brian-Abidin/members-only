@@ -19,6 +19,8 @@
     --spacing: 0.25rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-5xl: 3rem;
@@ -267,6 +269,21 @@
       }
     }
   }
+  .focus\:animation-paused {
+    &:focus {
+      animation-play-state: paused;
+    }
+  }
+  .active\:animation-paused {
+    &:active {
+      animation-play-state: paused;
+    }
+  }
+  .max-md\:h-\[200vh\] {
+    @media (width < 56rem) {
+      height: 200vh;
+    }
+  }
   .max-md\:h-full {
     @media (width < 56rem) {
       height: 100%;
@@ -282,9 +299,36 @@
       flex-direction: column;
     }
   }
-  .max-md\:justify-start {
-    @media (width < 56rem) {
-      justify-content: flex-start;
+  .max-sm\:h-10 {
+    @media (width < 40rem) {
+      height: calc(var(--spacing) * 10);
+    }
+  }
+  .max-sm\:h-12 {
+    @media (width < 40rem) {
+      height: calc(var(--spacing) * 12);
+    }
+  }
+  .max-sm\:h-30 {
+    @media (width < 40rem) {
+      height: calc(var(--spacing) * 30);
+    }
+  }
+  .max-sm\:w-60 {
+    @media (width < 40rem) {
+      width: calc(var(--spacing) * 60);
+    }
+  }
+  .max-sm\:text-3xl {
+    @media (width < 40rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .max-sm\:text-xl {
+    @media (width < 40rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
 }
