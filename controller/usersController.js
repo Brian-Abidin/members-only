@@ -1,9 +1,13 @@
 const db = require("../db/queries");
 
 async function getIndex(req, res) {
+  const messages = await db.getAllMessages();
+  console.log(messages, "HERE");
+  console.log(messages[0].id, "ALSO EHREE");
   console.log(res.locals);
   console.log(req.session, "SESSION");
   res.render("index", {
+    messages,
     greeting: "hello world",
     user: req.user
   });
