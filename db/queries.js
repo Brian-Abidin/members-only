@@ -13,7 +13,13 @@ async function updateMember(username) {
   ]);
 }
 
+async function getAllMessages() {
+  const { rows } = await pool.query("SELECT * FROM messages");
+  return rows;
+}
+
 module.exports = {
   insertMessage,
+  getAllMessages,
   updateMember
 };
