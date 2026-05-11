@@ -4,8 +4,12 @@
             <% for(let i = 0; i < messages.length; i+=1) { %>
                 <div class="max-sm:w-60 max-sm:h-30 p-2 rounded-xl flex flex-col justify-between w-80 h-40  bg-slate-50 rounded-xl">
                     <div class="flex flex-row items-center justify-start w-full h-fit gap-2">
-                        <div class="h-10 w-10 flex items-center justify-center bg-amber-400 rounded-full">G</div>
-                        <p>Greatest Member</p>
+                        <div class="h-10 w-10 flex items-center justify-center bg-amber-400 bg-[url('/icons/letter-m.png')] bg-contain rounded-full"></div>
+                        <% if(user) { %>
+                            <p><%= usernameArr[i] %></p>
+                        <% } else {%>
+                            <p>****</p>
+                        <%}%>
                     </div>
                     <div class="flex items-start justify-center  w-full h-full">
                         <p class="text-center"><%= typeof messages !== 'undefined' ? messages[i].message : 'This is a message' %></p>
@@ -54,8 +58,12 @@
             <% for(let i = 0; i < messages.length; i+=1) { %>
                 <div class="max-sm:w-60 max-sm:h-30 p-2 flex flex-col justify-between w-80 h-40  bg-slate-50 rounded-xl">
                     <div class="flex flex-row items-center justify-start w-full h-fit gap-2">
-                        <div class="h-10 w-10 flex items-center justify-center bg-amber-400 rounded-full">G</div>
-                        <p>Greatest Member</p>
+                        <div class="h-10 w-10 flex items-center justify-center bg-amber-400 bg-[url('/icons/letter-m.png')] bg-contain rounded-full"></div>
+                        <% if(user) { %>
+                            <p><%= usernameArr[i] %></p>
+                        <% } else {%>
+                            <p>****</p>
+                        <%}%>
                     </div>
                     <div class="flex items-start justify-center  w-full h-full">
                         <p class="text-center"><%= typeof messages !== 'undefined' ? messages[i].message : 'This is a message' %></p>
