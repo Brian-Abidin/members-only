@@ -18,8 +18,17 @@ async function getAllMessages() {
   return rows;
 }
 
+async function getUserById(id) {
+  const { rows } = await pool.query(
+    "SELECT username FROM users WHERE id = $1",
+    [id]
+  );
+  return rows;
+}
+
 module.exports = {
   insertMessage,
+  updateMember,
   getAllMessages,
-  updateMember
+  getUserById
 };
