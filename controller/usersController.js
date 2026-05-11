@@ -1,12 +1,26 @@
 const db = require("../db/queries");
 
+// function that takes the array of author_ids
+// from the messages db in PSQL and then makes
+// an array of just usernames
+async function getUsernamesByAuthorIds(idArr) {
+  const promiseUsers = idArr.map((id) => db.getUserById(id));
+  const resultUsers = await Promise.all(promiseUsers);
+  return resultUsers.flat().map((user) => user.username);
+}
+
 async function getIndex(req, res) {
   const messages = await db.getAllMessages();
+  const usernameArr = await getUsernamesByAuthorIds(
+    messages.map((message) => message.author_id)
+  );
+  console.log(usernameArr, "THISSS");
   console.log(messages, "HERE");
   console.log(messages[0].id, "ALSO EHREE");
   console.log(res.locals);
   console.log(req.session, "SESSION");
   res.render("index", {
+    usernameArr,
     messages,
     greeting: "hello world",
     user: req.user
