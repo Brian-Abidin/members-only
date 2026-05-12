@@ -10,6 +10,7 @@
 } */
 @theme {
   --breakpoint-md: 56rem;
+  --breakpoint-sm: 31rem;
   @keyframes scroll {
     0% {
       transform: translateY(0);
