@@ -24,3 +24,14 @@
 @utility animation-paused {
   animation-play-state: paused;
 }
+
+@layer base {
+  input {
+    border: transparent;
+    outline: none;
+  }
+  input:focus {
+    border: transparent;
+    box-shadow: none;
+  }
+}
