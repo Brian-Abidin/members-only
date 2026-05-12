@@ -13,3 +13,9 @@ skyline https://unsplash.com/illustrations/city-skyline-with-tall-buildings-at-s
 gold https://unsplash.com/illustrations/abstract-swirling-patterns-in-brown-and-beige-tones-xQ80w9XYzck
 
 letter-m https://www.flaticon.com/free-icon/letter-m_5540520?term=letter+m&page=1&position=61&origin=search&related_id=5540520
+
+blue-cat-icon https://www.flaticon.com/free-icon/russian-blue-cat_6812367?term=blue+animal&page=1&position=54&origin=search&related_id=6812367
+
+panda-bear-icon https://www.flaticon.com/free-icon/panda-bear_9378015
+
+deer-icon https://www.flaticon.com/free-icon/deer_10738692
