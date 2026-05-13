@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head')%>
-<body>
-    <a href="/">Home</a>
-    <h1>Sign In</h1>
-    <form class=" flex-wrap bg-yellow-400 m-0 p-0 max-h-40 flex items-center justify-center" action="/log-in" method="POST">
-        <label for="username">Username</label>
-        <input id="username" name="username" placeholder="username" type="text" />
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" />
-        <label for="confirm-password">Confirm Password:</label>
-        <input id="confirm-password" name="confirm-password" type="password">
-        <button type="submit">Log In</button>
-    </form>
+<body class="m-0 p-0">
+    <div class=" flex w-full h-screen bg-amber-300">
+        <div class="flex-1 bg-blue-300">
+            <header class="mt-5 p-0 flex items-center justify-center h-20">
+                <a class="flex items-center h-fit text-slate-50 no-underline text-4xl font-bold gap-5" href="/">
+                    <img class="max-sm:h-12 max-sm:w-12 h-20 w-20" src="../icons/letter-m.png" alt="">
+                    <h1 class="max-sm:text-3xl text-5xl">Members Only</h1>
+                </a>
+            </header>
+        </div>
+        <div class="flex-1 flex justify-center items-center ">
+            <div class="p-5 h-full w-full flex flex-col items-center justify-center rounded-2xl">  
+                <h1 class="m-0 mb-6 p-0">Log in</h1>
+                <form class="max-sm:gap-2 h-fit w-fit flex flex-col items-center justify-center gap-4" action="/log-in" method="POST">
+                    <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
+                        <label class="max-sm:text-sm" for="username">Username</label>
+                        <input class="max-sm:w-55 max-sm:h-12 max-sm:text-sm pl-2 w-75 h-15 placeholder:text-slate-400 text-lg bg-slate-800 text-slate-200" id="username" name="username" placeholder="Username" type="text" autocomplete="off" required/>
+                    </div>
+                    <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
+                        <label class="max-sm:text-sm" for="password">Password</label>
+                        <input class="max-sm:w-55 max-sm:h-12 max-sm:text-sm pl-2 w-75 h-15 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="password" name="password" placeholder="Password" type="password" required/>
+                    </div>
+                    <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
+                        <label class="max-sm:text-sm" for="confirm-password">Confirm Password</label>
+                        <input class="max-sm:w-55 max-sm:h-12 max-sm:text-sm pl-2 w-75 h-15 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="confirm-password" name="confirm-password" placeholder="Confirm password" type="password" required>
+                    </div>
+                    <button class="max-sm:w-60 mt-5 w-80 h-15 border-none rounded-2xl text-lg text-slate-50 bg-sky-800 cursor-grab" type="submit">Log In</button>
+                </form>
+                <div class="mt-10 flex items-center justify-center">Don't have an account?</div>
+                <a class="mt-2 p-0 max-sm:w-60 w-80 h-15 flex items-center justify-center no-underline text-lg rounded-2xl text-slate-950 bg-slate-50 border-2 border-sky-800 cursor-grab font-[arial]" href="/sign-up">Sign Up</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
