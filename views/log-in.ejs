@@ -2,8 +2,8 @@
 <html lang="en">
 <%- include('./partials/head')%>
 <body class="m-0 p-0">
-    <div class=" flex w-full h-screen bg-amber-300">
-        <div class="flex-1 bg-blue-300">
+    <div class=" flex w-full h-screen bg-[url('/images/blue-bg.svg')] bg-cover">
+        <div class="flex-1 ">
             <header class="mt-5 p-0 flex items-center justify-center h-20">
                 <a class="flex items-center h-fit text-slate-50 no-underline text-4xl font-bold gap-5" href="/">
                     <img class="max-sm:h-12 max-sm:w-12 h-20 w-20" src="../icons/letter-m.png" alt="">
@@ -12,7 +12,7 @@
             </header>
         </div>
         <div class="flex-1 flex justify-center items-center ">
-            <div class="p-5 h-full w-full flex flex-col items-center justify-center rounded-2xl">  
+            <div class="p-5 h-fit w-fit flex flex-col items-center justify-center rounded-2xl border-2 border-gray-500 bg-slate-950 text-slate-50 font-[arial]">  
                 <h1 class="m-0 mb-6 p-0">Log in</h1>
                 <form class="max-sm:gap-2 h-fit w-fit flex flex-col items-center justify-center gap-4" action="/log-in" method="POST">
                     <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
