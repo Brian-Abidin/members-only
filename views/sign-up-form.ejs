@@ -15,27 +15,27 @@
         <p class="m-0 p-0 max-w-200 text-center text-lg ">Few steps away from being a member! Please enter your username, password, first name, and last name. You will use your username and password to login.</p>
       </div>
     </div>
-    <div class="max-sm:justify-start max-sm:mt-5 flex-1 p-0 h-full w-full flex flex-col justify-center items-center">
-      <form class="max-sm:gap-2 h-fit w-fit flex flex-col items-center justify-center gap-4" action="/sign-up" method="POST">
+    <div class="max-sm:justify-start max-sm:mt-5 flex-1 p-0 h-full w-full flex flex-col justify-center items-center font-[arial]">
+      <form class="max-sm:gap-2 p-5 h-fit w-fit flex flex-col items-center justify-center gap-4 bg-slate-950 rounded-2xl" action="/sign-up" method="POST">
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="username">Username</label>
-          <input class="max-sm:w-55 max-sm:h-12 max-sm:text-sm pl-2 w-75 h-15 placeholder:text-slate-400 text-lg bg-slate-800 text-slate-200" id="username" name="username" placeholder="Username" type="text" autocomplete="off" required/>
+          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 placeholder:text-slate-400 text-lg bg-slate-800 text-slate-200" id="username" name="username" placeholder="Username" type="text" autocomplete="off" required/>
         </div>
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="password">Password</label>
-          <input class="max-sm:w-55 max-sm:h-12 max-sm:text-sm pl-2 w-75 h-15 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="password" name="password" placeholder="Password" type="password" required/>
+          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="password" name="password" placeholder="Password" type="password" required/>
         </div>
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="confirm-password">Confirm Password</label>
-          <input class="max-sm:w-55 max-sm:h-12 max-sm:text-sm pl-2 w-75 h-15 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="confirm-password" name="confirm-password" placeholder="Confirm password" type="password" required>
+          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="confirm-password" name="confirm-password" placeholder="Confirm password" type="password" required>
         </div>
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="first-name">First Name</label>
-          <input class="max-sm:w-55 max-sm:h-12 max-sm:text-sm pl-2 w-75 h-15 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="first-name" name="first-name" placeholder="First name" type="text" autocomplete="off" required/>
+          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="first-name" name="first-name" placeholder="First name" type="text" autocomplete="off" required/>
         </div>
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="last-name">Last Name</label>
-          <input class="max-sm:w-55 max-sm:h-12 max-sm:text-sm pl-2 w-75 h-15 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="last-name" name="last-name" placeholder="Last name" type="text" autocomplete="off"required/>
+          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="last-name" name="last-name" placeholder="Last name" type="text" autocomplete="off"required/>
         </div>
         <button class="max-sm:w-60 mt-5 w-80 h-15 rounded-2xl text-lg text-slate-950 bg-slate-50 border-2 border-sky-800 cursor-grab" type="submit">Sign Up</button>
       </form>
