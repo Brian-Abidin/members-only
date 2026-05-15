@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include('./partials/head')%>
 <body class="p-0 m-0">
-  <div class="max-md:flex-col max-md:justify-items-center max-md:items-center flex w-full h-screen bg-[url('/images/blue-bg.svg')] bg-cover text-slate-50">
+  <div class="max-sm:min-h-screen max-sm:h-auto max-md:flex-col max-md:justify-items-center max-md:items-center flex w-full h-screen bg-[url('/images/blue-bg.svg')] bg-cover text-slate-50">
     <div class="flex w-full h-fit flex-col flex-1 gap-30 max-md:gap-0 max-md:flex-none">
       <header class="mt-5 p-0 flex items-center justify-center h-20">
         <a class="flex items-center h-fit text-slate-50 no-underline text-4xl font-bold gap-5" href="/">
@@ -15,27 +15,28 @@
         <p class="m-0 p-0 max-w-200 text-center text-lg ">Few steps away from being a member! Please enter your username, password, first name, and last name. You will use your username and password to login.</p>
       </div>
     </div>
-    <div class="max-sm:justify-start max-sm:mt-5 flex-1 p-0 h-full w-full flex flex-col justify-center items-center font-[arial]">
-      <form class="max-sm:gap-2 p-5 h-fit w-fit flex flex-col items-center justify-center gap-4 bg-slate-950 rounded-2xl" action="/sign-up" method="POST">
+    <div class="max-sm:justify-start max-sm:mt-5 flex-1 p-0 h-full w-full flex flex-col justify-center items-center font-[arial] text-slate-950">
+      <form class="max-sm:gap-2 p-5 h-fit w-fit flex flex-col items-center justify-center gap-4 bg-slate-100 rounded-2xl border-2 border-gray-500" action="/sign-up" method="POST">
+        <h1 class="max-sm:text-2xl text-3xl h-5">Sign up</h1>
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="username">Username</label>
-          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 placeholder:text-slate-400 text-lg bg-slate-800 text-slate-200" id="username" name="username" placeholder="Username" type="text" autocomplete="off" required/>
+          <input class="max-sm:w-55 max-sm:h-8 max-sm:text-sm pl-2 w-70 h-10 placeholder:text-slate-400 text-lg bg-slate-300 text-slate-950" id="username" name="username" placeholder="Username" type="text" autocomplete="off" required/>
         </div>
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="password">Password</label>
-          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="password" name="password" placeholder="Password" type="password" required/>
+          <input class="max-sm:w-55 max-sm:h-8 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-300 text-slate-950" id="password" name="password" placeholder="Password" type="password" required/>
         </div>
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="confirm-password">Confirm Password</label>
-          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="confirm-password" name="confirm-password" placeholder="Confirm password" type="password" required>
+          <input class="max-sm:w-55 max-sm:h-8 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-300 text-slate-950" id="confirm-password" name="confirm-password" placeholder="Confirm password" type="password" required>
         </div>
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="first-name">First Name</label>
-          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="first-name" name="first-name" placeholder="First name" type="text" autocomplete="off" required/>
+          <input class="max-sm:w-55 max-sm:h-8 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-300 text-slate-950" id="first-name" name="first-name" placeholder="First name" type="text" autocomplete="off" required/>
         </div>
         <div class="p-1 w-fit flex flex-col items-start justify-items-center h-fit gap-1">
           <label class="max-sm:text-sm" for="last-name">Last Name</label>
-          <input class="max-sm:w-55 max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-800 text-slate-200" id="last-name" name="last-name" placeholder="Last name" type="text" autocomplete="off"required/>
+          <input class="max-sm:w-55  max-sm:text-sm pl-2 w-70 h-10 text-lg placeholder:text-slate-400 bg-slate-300 text-slate-950" id="last-name" name="last-name" placeholder="Last name" type="text" autocomplete="off"required/>
         </div>
         <button class="max-sm:w-60 mt-5 w-80 h-15 rounded-2xl text-lg text-slate-950 bg-slate-50 border-2 border-sky-800 cursor-grab" type="submit">Sign Up</button>
       </form>
