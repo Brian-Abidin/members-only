@@ -1,0 +1,17 @@
+<div class="font-[arial]">
+  <header class="p-0 flex items-center justify-between h-20 bg-amber-800">
+      <a class="ml-2 flex items-center h-fit text-slate-50 no-underline text-base font-bold gap-1" href="/">  
+        <img class="max-sm:h-12 max-sm:w-12 h-10 w-10" src="../icons/letter-m.png" alt="">
+        <h1 class="max-md:hidden">Members Only</h1>
+      </a>
+      <div class="mr-2 w-fit h-full flex items-center justify-between gap-2 text-base text-slate-50 bg-blue-500">
+        <a href="/message">new message</a>
+        <a href="/members-form">Become a member!</a>
+        <h1 class="font-normal"><%= user.username %></h1>
+      </div>
+  </header>
+  <h1 class="text-green-400">WELCOME BACK <%= user.username %></h1>
+  <a href="/message">new message!</a>
+  <a href="/members-form">Become a member!</a>
+  <a href="/log-out">LOG OUT</a>
+</div>
