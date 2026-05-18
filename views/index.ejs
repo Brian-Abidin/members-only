@@ -4,12 +4,7 @@
 <body class="bg-purple-200 m-0 p-0">
   <div class="m-0 p-0 grid grid-rows-[1fr_auto] gap-0 bg-purple-500 h-screen">
     <% if (locals.user) {%>
-      <div>
-        <h1 class="text-green-400">WELCOME BACK <%= user.username %></h1>
-        <a href="/message">new message!</a>
-        <a href="/members-form">Become a member!</a>
-        <a href="/log-out">LOG OUT</a>
-      </div>
+    <%- include('./partials/success')%>
     <% } else { %>
       <div class="max-md:flex-col max-md:h-[200vh] m-0 p-0 flex items-start justify-center h-screen bg-[url('/images/blue-bg.svg')] bg-cover">
         <div class= "max-md:h-full flex-1 grid grid-rows-3 h-full w-full place-items-center">
