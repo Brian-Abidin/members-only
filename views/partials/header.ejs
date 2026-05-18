@@ -1,4 +1,12 @@
-<div class="m-0 p-0 flex items-center justify-around h-10 w-screen bg-green-500">
-    <a class="text-lg no-underline bg-amber-900 text-white p-0.5 rounded-sm" href="/sign-up">Sign Up</a>
-    <a class="text-lg no-underline bg-amber-900 text-white p-0.5 rounded-sm" href="">Home</a>
-</div>
+<header class="sticky top-0 p-0 flex items-center justify-between h-15 bg-slate-700">
+    <a class="ml-2 flex items-center h-fit text-slate-50 no-underline text-base font-bold gap-1" href="/">  
+    <img class="max-sm:h-12 max-sm:w-12 h-10 w-10" src="../icons/letter-m.png" alt="">
+    <h1 class="max-md:hidden">Members Only</h1>
+    </a>
+    <div class="mr-2 w-fit h-full flex items-center justify-between gap-2 text-base text-slate-50">
+    <a class="no-underline text-slate-50 hover:text-slate-300" href="/message">new message</a>
+    <a class="no-underline text-slate-50 hover:text-slate-300" href="/members-form">Become a member!</a>
+    <a class="no-underline text-slate-50 hover:text-slate-300" href="/log-out">LOG OUT</a>
+    <h1 class="font-normal"><%= user.username %></h1>
+    </div>
+</header>
