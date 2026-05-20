@@ -6,5 +6,30 @@
     <div class="flex items-start justify-center w-full h-full ">
         <p class="ml-5 mr-5 text-center line-clamp-3 "><%= typeof messages !== 'undefined' ? messages[i].message : 'This is a message' %></p>
     </div>
-    <div class="flex justify-end"><%= time %> days ago</div>
+    <div class="time flex justify-end">
+        <% let timePassed = 0 %>
+        <% switch (true){ 
+            case time >= 365:
+                timePassed = Math.floor(time / 365) + ' year(s) ago' 
+                break;
+            case time >= 30:
+                timePassed = Math.floor(time / 30) + ' month(s) ago' 
+                break; 
+            case time >= 7: 
+                timePassed = Math.floor(time / 7) + ' week(s) ago' 
+                break; 
+            case time >= 1: 
+                timePassed = Math.floor(time) + ' day(s) ago' 
+                break;
+            case time >= (1/24):
+                timePassed = Math.floor(time * 24) + ' hour(s) ago'
+                break; 
+            case time > (1/(24*60)):
+                timePassed = Math.floor(time * 24 * 60) + ' minute(s) ago' 
+                break;
+            default: 
+                timePassed = "now" 
+        } %>
+        <%= timePassed %> 
+    </div>
 </div>
