@@ -13,6 +13,7 @@ UsersRouter.get(
 );
 UsersRouter.get("/sign-up", usersController.getForm);
 UsersRouter.get("/message", usersController.getMessage);
+UsersRouter.get("/messages/:id", usersController.getMessageDetails);
 UsersRouter.get("/members-form", usersController.getMembersForm);
 UsersRouter.get("/failure", usersController.getFailure);
 UsersRouter.get("/log-out", passportController.logoutRequest);
