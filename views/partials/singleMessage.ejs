@@ -1,0 +1,37 @@
+<div class="p-2 flex flex-col justify-between h-fit min-h-50 max-h-100 w-3/4 max-w-170 bg-slate-50 rounded-xl">
+    <div class="flex flex-row items-center justify-start w-full h-fit gap-2 ">
+        <div class="h-8 w-8 flex items-center justify-center bg-amber-400 bg-[url('/icons/letter-m.png')] bg-contain bg-no-repeat rounded-full"></div>
+        <p><%= author %></p>
+    </div>
+    <div class="flex items-start justify-center w-full h-full ">
+        <p class="ml-5 mr-5 text-center line-clamp-3 "><%= foundMessage.message %></p>
+    </div>
+    <div class="time flex justify-end">
+        <% const date = new Date(foundMessage.absolute_time) %>
+        <% const time = (new Date() - date)/(1000 * 60 * 60 * 24) %>
+        <% let timePassed = 0 %>
+        <% switch (true){ 
+            case time >= 365:
+                timePassed = Math.floor(time / 365) + ' year(s) ago' 
+                break;
+            case time >= 30:
+                timePassed = Math.floor(time / 30) + ' month(s) ago' 
+                break; 
+            case time >= 7: 
+                timePassed = Math.floor(time / 7) + ' week(s) ago' 
+                break; 
+            case time >= 1: 
+                timePassed = Math.floor(time) + ' day(s) ago' 
+                break;
+            case time >= (1/24):
+                timePassed = Math.floor(time * 24) + ' hour(s) ago'
+                break; 
+            case time > (1/(24*60)):
+                timePassed = Math.floor(time * 24 * 60) + ' minute(s) ago' 
+                break;
+            default: 
+                timePassed = "now" 
+        } %>
+        <%= timePassed %> 
+    </div>
+</div>
