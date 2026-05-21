@@ -77,6 +77,21 @@ async function getMessage(req, res) {
   }
 }
 
+async function getMessageDetails(req, res) {
+  // obtain pramaters, id, from URL
+  const { id } = req.params;
+  const messages = await db.getAllMessages();
+  // id is not a number, put + in front of variable turns it into a number
+  const foundMessage = messages.find((message) => message.id === +id);
+  const author = await db.getUserById(foundMessage.author_id);
+  console.log(author);
+  res.render("messages", {
+    foundMessage,
+    author: author[0].username,
+    user: req.user
+  });
+}
+
 async function postMessage(req, res) {
   console.log(req.user, "POSTED");
   const { title } = req.body;
@@ -95,6 +110,7 @@ module.exports = {
   getLogin,
   getMembersForm,
   getMessage,
+  getMessageDetails,
   postMessage,
   postMembership
 };
