@@ -69,7 +69,7 @@ async function getFailure(req, res) {
 async function getMessage(req, res) {
   console.log(req.isAuthenticated(), "GET MESSAGE");
   if (req.isAuthenticated()) {
-    res.render("message");
+    res.render("messageForm");
   } else {
     res.render("failure", {
       errors: new Error("user is not logged in")
