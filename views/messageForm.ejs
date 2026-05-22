@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head')%>
-<body>
-  <h1>New Message</h1>
-  <form action="/message" method="POST">
-    <label for="title">Title</label>
-    <input id="title" name="title" placeholder="title" type="text" autocomplete="off" required/>
-    <label for="message">Message</label>
-    <textarea id="message" name="message" type="text" required></textarea>
-    <button type="submit">Enter</button>
-  </form>
+<body class="m-0 p-0 text-slate-50 font-[arial]">
+  <%- include('./partials/header') %>
+  <div class="pt-10 flex items-start justify-center min-h-screen bg-[url('/images/blue-bg.svg')] bg-cover">
+    <div class="m-0 pr-10 pl-5 pt-5 pb-5 w-1/3 min-w-fit flex flex-col items-center justify-center bg-slate-600/60 h-fit rounded-2xl">
+      <h2 class="w-full text-3xl self-start">Create Message</h2>
+        <form class="m-0 p-0 w-full flex flex-col items-start justify-center gap-3" action="/message" method="POST">
+          <div class="m-0 p-2 flex flex-col items-start justify-start w-full h-fit gap-1 bg-slate-800 rounded-md border-2 border-slate-500">
+            <label class="text-sm border-b-2 border-sky-700" for="title">Title</label>
+            <input class=" w-full h-10 text-base bg-transparent text-slate-50 focus:outline-1 outline-slate-50 rounded-sm" id="title" name="title" type="text" placeholder="title" autocomplete="off" required/>
+          </div>
+          <div class="m-0 p-2 flex flex-col items-start justify-start w-full h-fit gap-1 bg-slate-800 rounded-md border-2 border-slate-500">
+            <label class="text-sm border-b-2 border-sky-700" for="message">Message</label>
+            <textarea class="pt-1 w-full h-20 text-base bg-transparent resize-none text-slate-50 border-none rounded-sm font-[arial]" id="message" name="message" type="text" placeholder="message" required></textarea>
+          </div>
+          <div class="p-2 w-full flex items-center justify-end">
+            <button class="ml-5 w-40 h-10 flex items-center justify-center bg-taupe-50 rounded-lg text-lg border-none cursor-grab" type="submit">Enter</button>
+          </div>
+        </form>
+    </div>
+  </div>
 </body>
 </html>
