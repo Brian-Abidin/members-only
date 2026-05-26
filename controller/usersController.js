@@ -39,6 +39,7 @@ async function getMembersForm(req, res) {
   console.log(res.locals, "MEMBERS FORM");
   if (req.isAuthenticated()) {
     res.render("members-form", {
+      admin: res.locals.currentUser.is_admin,
       member: res.locals.currentUser.is_member,
       user: req.user
     });
