@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const passport = require("passport");
+const { validate } = require("jest-validate");
 const usersController = require("../controller/usersController");
 const passportController = require("../config/passport");
 const validateMiddleware = require("../middleware/validateUser");
@@ -15,6 +16,7 @@ UsersRouter.get("/sign-up", usersController.getForm);
 UsersRouter.get("/new", usersController.getMessage);
 UsersRouter.get("/messages/:id", usersController.getMessageDetails);
 UsersRouter.get("/members-form", usersController.getMembersForm);
+UsersRouter.get("/admin-form", usersController.getAdminForm);
 UsersRouter.get("/failure", usersController.getFailure);
 UsersRouter.get("/log-out", passportController.logoutRequest);
 UsersRouter.get("/log-in", usersController.getLogin);
@@ -24,7 +26,6 @@ UsersRouter.post(
   validateMiddleware.passwordConfirmation,
   passportController.createUser
 );
-
 UsersRouter.post(
   "/log-in",
   validateMiddleware.signUpValidation,
@@ -34,13 +35,18 @@ UsersRouter.post(
     failureRedirect: "/failure"
   })
 );
-
 UsersRouter.post("/message", usersController.postMessage);
 UsersRouter.post(
   "/members-form",
   validateMiddleware.checkMemberCode,
-  validateMiddleware.validMemberCode,
+  validateMiddleware.validateCode,
   usersController.postMembership
+);
+UsersRouter.post(
+  "/admin-form",
+  validateMiddleware.checkAdminCode,
+  validateMiddleware.validateCode,
+  usersController.postAdmin
 );
 
 module.exports = UsersRouter;
