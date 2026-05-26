@@ -13,6 +13,12 @@ async function updateMember(username) {
   ]);
 }
 
+async function updateAdmin(username) {
+  await pool.query("UPDATE users SET is_admin = true WHERE username = $1", [
+    username
+  ]);
+}
+
 async function getAllMessages() {
   const { rows } = await pool.query("SELECT * FROM messages");
   return rows;
@@ -29,6 +35,7 @@ async function getUserById(id) {
 module.exports = {
   insertMessage,
   updateMember,
+  updateAdmin,
   getAllMessages,
   getUserById
 };
