@@ -4,8 +4,17 @@
 <body class="m-0 p-0 font-[arial]">
     <%- include('./partials/header')%>
     <div class="pt-10 flex items-start justify-center min-h-screen bg-[url('/images/blue-bg.svg')] bg-cover">
-    <% if( member ) { %>
-      <h2 class="m-0">Hey, you're already a member!</h2>
+    <% if( member) { %>
+      <div class="m-0 p-2 flex flex-col items-center justify-start w-3/4 min-w-60 max-w-100 h-fit gap-1 bg-slate-100 rounded-md border-2 border-slate-500">
+        <h2 class="max-sm:text-lg m-0">You're already a member!</h2>
+        <p class="max-sm:text-base text-lg">Enjoy your member perks:</p>
+        <ul class="max-sm:text-sm flex flex-col gap-1">
+          <li>Member exclusive styling shown only on messages created by members</li>
+          <li>More style options creating messages</li>
+          <li>More style options for your profile</li>
+          <li>Custom avatars and more!</li>
+        </ul>
+      </div>
     <%} else { %>
       <form class="m-2 p-5 flex flex-col items-center text-slate-50 bg-slate-600/60 rounded-2xl gap-2" action="/members-form" method="POST">
         <h2>Enter the secret member code to join!</h2>
