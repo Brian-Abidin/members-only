@@ -25,7 +25,7 @@ const checkMemberCode = [
   })
 ];
 
-async function validMemberCode(req, res, next) {
+async function validateCode(req, res, next) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.render("failure");
@@ -33,9 +33,19 @@ async function validMemberCode(req, res, next) {
   next();
 }
 
+const checkAdminCode = [
+  body("admin-code").custom((value) => {
+    if (value !== process.env.ADMIN_CODE) {
+      throw new Error("Admin code is incorrect.");
+    }
+    return true;
+  })
+];
+
 module.exports = {
   signUpValidation,
   passwordConfirmation,
   checkMemberCode,
-  validMemberCode
+  checkAdminCode,
+  validateCode
 };
