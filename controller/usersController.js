@@ -39,7 +39,8 @@ async function getMembersForm(req, res) {
   console.log(res.locals, "MEMBERS FORM");
   if (req.isAuthenticated()) {
     res.render("members-form", {
-      member: res.locals.currentUser.is_member
+      member: res.locals.currentUser.is_member,
+      user: req.user
     });
   } else {
     res.status(401).render("failure", {
