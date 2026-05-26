@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head')%>
-<body>
-  <h1>Members Form</h1>
-  <a href="/">Home</a>
-  <% if( member ) { %>
-    <h2>Hey, you're already a member!</h2>
-  <%} else { %>
-  <h2>Enter the secret member code to join!</h2>
-  <form action="/members-form" method="POST">
-    <label for="secret-code">Secret Code</label>
-    <input id="secret-code" name="secret-code" type="password" autocomplete="off" required/>
-    <button type="submit">Enter</button>
-  </form>
-  <%} %>
+<body class="m-0 p-0">
+    <%- include('./partials/header')%>
+    <div class="pt-10 flex items-start justify-center min-h-screen bg-[url('/images/blue-bg.svg')] bg-cover">
+    <% if( member ) { %>
+      <h2 class="m-0">Hey, you're already a member!</h2>
+    <%} else { %>
+      <h2>Enter the secret member code to join!</h2>
+      <form action="/members-form" method="POST">
+        <label for="secret-code">Secret Code</label>
+        <input id="secret-code" name="secret-code" type="password" autocomplete="off" required/>
+        <button type="submit">Enter</button>
+      </form>
+    <%} %>
+  </div>
 </body>
 </html>
