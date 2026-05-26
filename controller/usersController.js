@@ -19,12 +19,22 @@ async function getIndex(req, res) {
   console.log(messages[0].id, "ALSO EHREE");
   console.log(res.locals);
   console.log(req.session, "SESSION");
-  res.render("index", {
-    usernameArr,
-    messages,
-    greeting: "hello world",
-    user: req.user
-  });
+  if (res.locals.currentUser) {
+    res.render("index", {
+      member: res.locals.currentUser.is_member,
+      usernameArr,
+      messages,
+      greeting: "hello world",
+      user: req.user
+    });
+  } else {
+    res.render("index", {
+      usernameArr,
+      messages,
+      greeting: "hello world",
+      user: req.user
+    });
+  }
 }
 
 async function getForm(req, res) {
@@ -50,6 +60,25 @@ async function getMembersForm(req, res) {
   }
 }
 
+async function getAdminForm(req, res) {
+  if (req.isAuthenticated() && res.locals.currentUser.is_member) {
+    res.render("adminForm", {
+      admin: res.locals.currentUser.is_admin,
+      member: res.locals.currentUser.is_member,
+      user: req.user
+    });
+  } else {
+    res.status(401).render("failure", {
+      errors: new Error("user is not authorized to access this page")
+    });
+  }
+}
+
+async function postAdmin(req, res) {
+  db.updateAdmin(req.user.username);
+  res.redirect("/");
+}
+
 function userPageVisitCount(req, res, next) {
   if (req.session.viewCount) {
     req.session.viewCount += 1;
@@ -72,6 +101,7 @@ async function getMessage(req, res) {
   console.log(req.isAuthenticated(), "GET MESSAGE");
   if (req.isAuthenticated()) {
     res.render("messageForm", {
+      member: res.locals.currentUser.is_member,
       user: req.user
     });
   } else {
@@ -90,9 +120,10 @@ async function getMessageDetails(req, res) {
   const author = await db.getUserById(foundMessage.author_id);
   console.log(author);
   res.render("messages", {
+    user: req.user,
+    member: res.locals.currentUser.is_member,
     foundMessage,
-    author: author[0].username,
-    user: req.user
+    author: author[0].username
   });
 }
 
@@ -113,8 +144,10 @@ module.exports = {
   getForm,
   getLogin,
   getMembersForm,
+  getAdminForm,
   getMessage,
   getMessageDetails,
   postMessage,
-  postMembership
+  postMembership,
+  postAdmin
 };
