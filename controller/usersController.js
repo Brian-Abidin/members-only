@@ -137,6 +137,11 @@ async function postMessage(req, res) {
   res.redirect("/");
 }
 
+async function postDeleteMessage(req, res) {
+  const id = req.body;
+  console.log(id);
+}
+
 module.exports = {
   userPageVisitCount,
   getIndex,
@@ -149,5 +154,6 @@ module.exports = {
   getMessageDetails,
   postMessage,
   postMembership,
-  postAdmin
+  postAdmin,
+  postDeleteMessage
 };
