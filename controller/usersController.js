@@ -138,8 +138,9 @@ async function postMessage(req, res) {
 }
 
 async function postDeleteMessage(req, res) {
-  const id = req.body;
-  console.log(id);
+  const { id } = req.params;
+  console.log(id, "HEREEE PLEASEEE");
+  res.redirect("/");
 }
 
 module.exports = {
