@@ -24,6 +24,10 @@ async function getAllMessages() {
   return rows;
 }
 
+async function deleteMessageById(id) {
+  await pool.query("DELETE FROM messages WHERE id = $1", [id]);
+}
+
 async function getUserById(id) {
   const { rows } = await pool.query(
     "SELECT username FROM users WHERE id = $1",
@@ -37,5 +41,6 @@ module.exports = {
   updateMember,
   updateAdmin,
   getAllMessages,
+  deleteMessageById,
   getUserById
 };
