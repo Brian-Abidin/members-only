@@ -48,5 +48,6 @@ UsersRouter.post(
   validateMiddleware.validateCode,
   usersController.postAdmin
 );
+UsersRouter.post("/delete", usersController.postDeleteMessage);
 
 module.exports = UsersRouter;
