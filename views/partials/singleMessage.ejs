@@ -1,9 +1,18 @@
-<div class="p-2 flex flex-col justify-between h-fit min-h-50 max-h-100 w-3/4 max-w-170 bg-slate-50 rounded-xl">
-    <div class="flex flex-row items-center justify-start w-full h-fit gap-2 ">
-        <div class="h-8 w-8 flex items-center justify-center bg-amber-400 bg-[url('/icons/letter-m.png')] bg-contain bg-no-repeat rounded-full"></div>
-        <p><%= author %></p>
+<div class="p-2 flex flex-col justify-between h-fit min-h-50 max-h-100 w-3/4 max-w-170 bg-slate-50 rounded-xl bg-">
+    <div class="flex flex-row items-center justify-between w-full h-fit gap-2 bg-amber-200">
+        <div class="flex items-center justify-center gap-2 bg-blue-300">
+            <div class="h-8 w-8 flex items-center justify-center bg-amber-400 bg-[url('/icons/letter-m.png')] bg-contain bg-no-repeat rounded-full"></div>
+            <p><%= author %></p>
+        </div>
+        <button id="test">HELLO</button>
+        <% if(member) { %>
+            <div>
+                <button id="delete-btn">HELLO</button>
+                <div id="test">HELLO</div>
+            </div>
+        <%}%>
     </div>
-    <div class="flex items-start justify-center w-full h-full ">
+    <div class="flex items-start justify-center w-full h-full bg-amber-100">
         <p class="ml-5 mr-5 text-center line-clamp-3 "><%= foundMessage.message %></p>
     </div>
     <div class="time flex justify-end">
