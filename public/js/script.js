@@ -29,37 +29,23 @@
 // }
 
 const delButton = document.getElementById("delete-btn");
-const test = document.getElementById("test");
 const deleteModal = document.getElementById("delete-modal");
 const closeBtn = document.getElementById("close-btn");
 const submitBtn = document.getElementById("submit-btn");
 
 function closeModal() {
-  if (deleteModal.style.display === "none") {
-    deleteModal.style.display = "flex";
-  } else {
+  console.log("hello");
+  if (deleteModal.style.display === "flex") {
     deleteModal.style.display = "none";
+  } else {
+    deleteModal.style.display = "flex";
   }
 }
 
-if (test) {
-  test.addEventListener("click", () => {
-    if (deleteModal.style.display === "none") {
-      deleteModal.style.display = "flex";
-    } else {
-      deleteModal.style.display = "none";
-    }
-    console.log("hello");
-  });
-}
+deleteModal.addEventListener("click", (event) => {
+  if (deleteModal === event.target) deleteModal.style.display = "none";
+});
 
 if (delButton) {
-  delButton.addEventListener("click", () => {
-    if (test.style.display === "none") {
-      test.style.display = "block";
-    } else {
-      test.style.display = "none";
-    }
-    console.log("hello");
-  });
+  delButton.addEventListener("click", closeModal);
 }
