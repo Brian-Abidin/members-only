@@ -6,9 +6,11 @@
      <!-- Message container -->
       <div class="m-2 flex flex-col max-w-150 flex-1  gap-2">
       <% for(let i = messages.length-1; i >= 0; i-=1){ %>
-        <% const date = new Date(messages[i].absolute_time) %>
-        <% const time = (new Date() - date)/(1000 * 60 * 60 * 24) %>
-        <%- include('./message', {i, time})%>
+        <a class="no-underline text-slate-900" href="/messages/<%= messages[i].id %>">
+          <% const date = new Date(messages[i].absolute_time) %>
+          <% const time = (new Date() - date)/(1000 * 60 * 60 * 24) %>
+          <%- include('./message', {i, time})%>
+        </a>
       <%}%>
       </div>
     </div>
