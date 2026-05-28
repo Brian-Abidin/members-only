@@ -122,6 +122,9 @@
   .mr-5 {
     margin-right: calc(var(--spacing) * 5);
   }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
   }
@@ -136,6 +139,12 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+  }
+  .line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
   }
   .block {
     display: block;
@@ -191,6 +200,9 @@
   .max-h-170 {
     max-height: calc(var(--spacing) * 170);
   }
+  .max-h-screen {
+    max-height: 100vh;
+  }
   .min-h-50 {
     min-height: calc(var(--spacing) * 50);
   }
@@ -245,6 +257,30 @@
   .w-screen {
     width: 100vw;
   }
+  .max-w-1 {
+    max-width: calc(var(--spacing) * 1);
+  }
+  .max-w-1\/2 {
+    max-width: calc(1 / 2 * 100%);
+  }
+  .max-w-3 {
+    max-width: calc(var(--spacing) * 3);
+  }
+  .max-w-3\/4 {
+    max-width: calc(3 / 4 * 100%);
+  }
+  .max-w-4 {
+    max-width: calc(var(--spacing) * 4);
+  }
+  .max-w-4\/5 {
+    max-width: calc(4 / 5 * 100%);
+  }
+  .max-w-20 {
+    max-width: calc(var(--spacing) * 20);
+  }
+  .max-w-30 {
+    max-width: calc(var(--spacing) * 30);
+  }
   .max-w-100 {
     max-width: calc(var(--spacing) * 100);
   }
@@ -257,11 +293,26 @@
   .max-w-220 {
     max-width: calc(var(--spacing) * 220);
   }
+  .max-w-fit {
+    max-width: fit-content;
+  }
+  .max-w-screen {
+    max-width: 100vw;
+  }
+  .min-w-1 {
+    min-width: calc(var(--spacing) * 1);
+  }
+  .min-w-1\/2 {
+    min-width: calc(1 / 2 * 100%);
+  }
   .min-w-60 {
     min-width: calc(var(--spacing) * 60);
   }
   .min-w-fit {
     min-width: fit-content;
+  }
+  .min-w-screen {
+    min-width: 100vw;
   }
   .flex-1 {
     flex: 1;
@@ -349,6 +400,9 @@
   }
   .self-start {
     align-self: flex-start;
+  }
+  .overflow-auto {
+    overflow: auto;
   }
   .overflow-hidden {
     overflow: hidden;
@@ -582,6 +636,16 @@
   .font-normal {
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
+  }
+  .break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .wrap-break-word {
+    overflow-wrap: break-word;
+  }
+  .break-all {
+    word-break: break-all;
   }
   .text-sky-800 {
     color: var(--color-sky-800);
