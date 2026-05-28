@@ -117,14 +117,20 @@ async function getMessageDetails(req, res) {
   const messages = await db.getAllMessages();
   // id is not a number, put + in front of variable turns it into a number
   const foundMessage = messages.find((message) => message.id === +id);
-  const author = await db.getUserById(foundMessage.author_id);
-  console.log(author);
-  res.render("messages", {
-    user: req.user,
-    member: res.locals.currentUser.is_member,
-    foundMessage,
-    author: author[0].username
-  });
+  if (foundMessage) {
+    const author = await db.getUserById(foundMessage.author_id);
+    res.render("messages", {
+      id,
+      user: req.user,
+      member: res.locals.currentUser.is_member,
+      foundMessage,
+      author: author[0].username
+    });
+  } else {
+    res.render("failure", {
+      errors: new Error("message does not exist")
+    });
+  }
 }
 
 async function postMessage(req, res) {
@@ -138,8 +144,8 @@ async function postMessage(req, res) {
 }
 
 async function postDeleteMessage(req, res) {
-  const { id } = req.params;
-  console.log(id, "HEREEE PLEASEEE");
+  const { message_id } = req.body;
+  await db.deleteMessageById(message_id);
   res.redirect("/");
 }
 
