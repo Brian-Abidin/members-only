@@ -1,19 +1,45 @@
 <div class="w-full h-full font-[arial]">
   <%- include('./header')%>
-  <div class="w-full min-h-screen h-fit flex bg-[url('/images/blue-bg.svg')] bg-cover bg-no-repeat">
-    <div class="flex flex-1 bg-amber-100 "></div>
-    <div class="flex flex-3 justify-center ">
-     <!-- Message container -->
-      <div class="m-2 flex flex-col max-w-150 flex-1  gap-2">
-      <% for(let i = messages.length-1; i >= 0; i-=1){ %>
-        <a class="no-underline text-slate-900" href="/messages/<%= messages[i].id %>">
-          <% const date = new Date(messages[i].absolute_time) %>
-          <% const time = (new Date() - date)/(1000 * 60 * 60 * 24) %>
-          <%- include('./message', {i, time})%>
-        </a>
-      <%}%>
+  <div class="w-full min-h-screen h-fit flex items-center justify-center bg-[url('/images/blue-bg.svg')] bg-cover bg-no-repeat">
+    <div class="w-fit flex items-start justify-center">
+      <div class="flex flex-3 justify-center ">
+      <!-- Message container -->
+        <div class="m-2 p-2 flex flex-col max-w-150 flex-1 gap-2 bg-gray-200/60 rounded-2xl">
+          <div class="flex items-center justify-center">
+            <h1 class="text-center">Messages</h1>
+          </div>
+          <% for(let i = messages.length-1; i >= 0; i-=1){ %>
+          <a class="no-underline text-slate-900" href="/messages/<%= messages[i].id %>">
+            <% const date = new Date(messages[i].absolute_time) %>
+            <% const time = (new Date() - date)/(1000 * 60 * 60 * 24) %>
+            <%- include('./message', {i, time})%>
+          </a>
+        <%}%>
+        </div>
+      </div>
+      <div class="p-5 mt-2 min-h-50 max-h-100 min-w-50 flex flex-col items-center justify-start flex-1 bg-gray-200/60 rounded-2xl">
+        <h2 class="w-full">Users</h2>
+        <div class="w-full h-fit overflow-auto">
+          <% for(let i = 0; i < users.length; i+=1){ %>
+            <div class="w-full mt-1"><%= users[i] %></div>
+          <%}%>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+          <div class="w-full mt-1">Jimmy</div>
+        </div>
       </div>
     </div>
-    <div class="flex flex-1 bg-amber-200"></div>
   </div>
 </div>
