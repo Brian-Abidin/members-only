@@ -10,6 +10,8 @@ async function getUsernamesByAuthorIds(idArr) {
 }
 
 async function getIndex(req, res) {
+  const users = await db.getAllUsers();
+  const usersArr = users.map((user) => user.username);
   const messages = await db.getAllMessages();
   const usernameArr = await getUsernamesByAuthorIds(
     messages.map((message) => message.author_id)
@@ -21,6 +23,7 @@ async function getIndex(req, res) {
   console.log(req.session, "SESSION");
   if (res.locals.currentUser) {
     res.render("index", {
+      users: usersArr,
       member: res.locals.currentUser.is_member,
       usernameArr,
       messages,
