@@ -61,10 +61,10 @@ if (dropBtn) {
 
 function closeModal() {
   console.log("hello");
-  if (deleteModal.style.display === "block") {
+  if (deleteModal.style.display === "flex") {
     deleteModal.style.display = "none";
   } else {
-    deleteModal.style.display = "block";
+    deleteModal.style.display = "flex";
   }
 }
 
