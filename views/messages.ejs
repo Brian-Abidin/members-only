@@ -4,7 +4,21 @@
 <body class="m-0 p-0 font-[arial]">
     <%- include('./partials/header')%>
     <div class="pt-10 flex items-start justify-center min-h-screen bg-[url('/images/blue-bg.svg')] bg-cover">
-        <%- include('./partials/singleMessage')%>
+        <div class="w-fit p-5 grid grid-col-2 bg-gray-200/60 rounded-2xl gap-5">
+            <h1 class="col-span-2 text-center ">Message Details</h1>
+            <%- include('./partials/singleMessage')%>
+            <div class="p-1 bg-slate-50 rounded-2xl">
+                <h1>Details</h1>
+                <div>Title: Mary's First Message</div>
+                <div>Author: Mary</div>
+                <div>Time Sent: 18:00:00 UTC MAY 12 2026</div>
+            </div>
+            <div class="p-1 bg-slate-50 rounded-2xl">
+                <h1>Admin Tools</h1>
+                <p>Delete</p>
+                <p>Edit</p>
+            </div>
+        </div>
     </div>
     <dialog id="delete-modal" class="hidden fixed items-center justify-center top-0 right-0 w-screen h-screen bg-slate-800/60">
         <div class="p-3 flex flex-col w-fit bg-slate-50 border-2 border-slate-500 rounded-2xl">
