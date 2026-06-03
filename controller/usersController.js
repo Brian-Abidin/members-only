@@ -16,14 +16,15 @@ async function getIndex(req, res) {
   const usernameArr = await getUsernamesByAuthorIds(
     messages.map((message) => message.author_id)
   );
-  console.log(usernameArr, "THISSS");
-  console.log(messages, "HERE");
-  console.log(messages[0].id, "ALSO EHREE");
-  console.log(res.locals);
-  console.log(req.session, "SESSION");
+  // console.log(usernameArr, "THISSS");
+  // console.log(messages, "HERE");
+  // console.log(messages[0].id, "ALSO EHREE");
+  // console.log(res.locals);
+  // console.log(req.session, "SESSION");
+  console.log(users, "HEREEE");
   if (res.locals.currentUser) {
     res.render("index", {
-      users: usersArr,
+      users,
       member: res.locals.currentUser.is_member,
       usernameArr,
       messages,
@@ -120,12 +121,14 @@ async function getMessageDetails(req, res) {
   const messages = await db.getAllMessages();
   // id is not a number, put + in front of variable turns it into a number
   const foundMessage = messages.find((message) => message.id === +id);
+  console.log(foundMessage, "SDFESFEF");
   if (foundMessage) {
     const author = await db.getUserById(foundMessage.author_id);
     res.render("messages", {
       id,
       user: req.user,
       member: res.locals.currentUser.is_member,
+      admin: res.locals.currentUser.is_admin,
       foundMessage,
       author: author[0].username
     });
