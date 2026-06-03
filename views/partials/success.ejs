@@ -21,7 +21,13 @@
         <h2 class="w-full">Users</h2>
         <div class="w-full h-fit overflow-auto">
           <% for(let i = 0; i < users.length; i+=1){ %>
-            <div class="w-full mt-1"><%= users[i] %></div>
+            <% if(users[i].is_admin){ %>
+                <div class="w-full mt-1"><%= users[i].username %> [Admin] </div>
+            <%} else if(users[i].is_member){ %>
+                <div class="w-full mt-1"><%= users[i].username %> [Member] </div>
+            <%} else { %>
+                <div class="w-full mt-1"><%= users[i].username %></div>
+              <%}%>
           <%}%>
           <div class="w-full mt-1">Jimmy</div>
           <div class="w-full mt-1">Jimmy</div>
