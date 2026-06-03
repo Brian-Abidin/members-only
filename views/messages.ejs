@@ -4,19 +4,22 @@
 <body class="m-0 p-0 font-[arial]">
     <%- include('./partials/header')%>
     <div class="pt-10 flex items-start justify-center min-h-screen bg-[url('/images/blue-bg.svg')] bg-cover">
-        <div class="w-fit p-5 grid grid-col-2 bg-gray-200/60 rounded-2xl gap-5">
-            <h1 class="col-span-2 text-center ">Message Details</h1>
+        <div class="w-fit p-5 grid grid-cols-2 bg-gray-200/60 rounded-2xl gap-5">
             <%- include('./partials/singleMessage')%>
-            <div class="p-1 bg-slate-50 rounded-2xl">
-                <h1>Details</h1>
-                <div>Title: Mary's First Message</div>
-                <div>Author: Mary</div>
-                <div>Time Sent: 18:00:00 UTC MAY 12 2026</div>
+            <div class="p-2 text-wrap border-r-2 border-slate-800">
+                <h1 class="underline">Details</h1>
+                <p><strong>Title:</strong> <%= foundMessage.title %></p>
+                <p><strong>Author:</strong> <%= author %></p>
+                <p class="max-w-50 text-wrap"><strong>Time Sent:</strong> <%= foundMessage.absolute_time %></p>
             </div>
-            <div class="p-1 bg-slate-50 rounded-2xl">
-                <h1>Admin Tools</h1>
-                <p>Delete</p>
-                <p>Edit</p>
+            <div class="p-2 rounded-2xl">
+                <h1 class="underline">Admin Tools</h1>
+                <% if(admin) { %>
+                    <div>Hello, Admin</div>
+                    <button id="delete-btn">Delete Message</button>
+                <%} else { %>
+                    <div>Admin access only.</div>
+                <%} %>
             </div>
         </div>
     </div>
