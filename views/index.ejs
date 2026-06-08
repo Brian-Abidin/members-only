@@ -5,6 +5,7 @@
   <div class="m-0 p-0 grid grid-rows-[1fr_auto] gap-0 bg-purple-500 h-screen">
     <% if (locals.user) {%>
     <%- include('./partials/success')%>
+    <%- include('./partials/footer')%>
     <% } else { %>
       <div class="max-md:flex-col max-md:h-[200vh] m-0 p-0 flex items-start justify-center h-screen bg-[url('/images/blue-bg.svg')] bg-cover">
         <div class= "max-md:h-full flex-1 grid grid-rows-3 h-full w-full place-items-center">
@@ -23,7 +24,7 @@
           <%- include('./partials/carousel-rev')%>
         </div>
       </div>
-      <div class="bg-green-950 h-14 flex items-center justify-center text-white">FOOTER</div>
+      <%- include('./partials/footer')%>
     <%}%>
   </div>
 </body>
