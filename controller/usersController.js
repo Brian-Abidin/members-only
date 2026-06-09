@@ -16,12 +16,6 @@ async function getIndex(req, res) {
   const usernameArr = await getUsernamesByAuthorIds(
     messages.map((message) => message.author_id)
   );
-  // console.log(usernameArr, "THISSS");
-  // console.log(messages, "HERE");
-  // console.log(messages[0].id, "ALSO EHREE");
-  // console.log(res.locals);
-  // console.log(req.session, "SESSION");
-  console.log(users, "HEREEE");
   if (res.locals.currentUser) {
     res.render("index", {
       users,
@@ -50,7 +44,6 @@ async function getLogin(req, res) {
 }
 
 async function getMembersForm(req, res) {
-  console.log(res.locals, "MEMBERS FORM");
   if (req.isAuthenticated()) {
     res.render("members-form", {
       admin: res.locals.currentUser.is_admin,
@@ -102,7 +95,6 @@ async function getFailure(req, res) {
 }
 
 async function getMessage(req, res) {
-  console.log(req.isAuthenticated(), "GET MESSAGE");
   if (req.isAuthenticated()) {
     res.render("messageForm", {
       member: res.locals.currentUser.is_member,
@@ -121,7 +113,6 @@ async function getMessageDetails(req, res) {
   const messages = await db.getAllMessages();
   // id is not a number, put + in front of variable turns it into a number
   const foundMessage = messages.find((message) => message.id === +id);
-  console.log(foundMessage, "SDFESFEF");
   if (foundMessage) {
     const author = await db.getUserById(foundMessage.author_id);
     res.render("messages", {
@@ -140,7 +131,6 @@ async function getMessageDetails(req, res) {
 }
 
 async function postMessage(req, res) {
-  console.log(req.user, "POSTED");
   const { title } = req.body;
   const message = req.body.message.replace(/\r?\n|\r/g, " ");
   if (req.isAuthenticated()) {
