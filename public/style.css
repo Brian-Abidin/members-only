@@ -19,7 +19,7 @@
       transform: translateY(-50%);
     }
   }
-  --animate-scroll: scroll 20s infinite linear;
+  --animate-scroll: scroll 10s infinite linear;
 }
 
 @utility animation-paused {
