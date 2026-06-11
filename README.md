@@ -1,4 +1,6 @@
-members only project from the odin project
+Members Only project from the odin project
+
+made using JS, CSS, HTML, EJS, Node.js, Express, Tailwind, and Passport.js for validation.
 
 blue-bg https://unsplash.com/illustrations/abstract-blue-background-with-swirling-patterns-YSHUvXHsu0Y
 
