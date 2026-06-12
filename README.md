@@ -1,23 +1,22 @@
-Members Only project from the odin project
+# Members Only Project
 
-made using JS, CSS, HTML, EJS, Node.js, Express, Tailwind, and Passport.js for validation.
+This is a project that is a part of The Odin Project curriculum. This project emphasizes the use of the [**Passport.js**](https://www.passportjs.org) authentication middleware integrated in a website.
 
-blue-bg https://unsplash.com/illustrations/abstract-blue-background-with-swirling-patterns-YSHUvXHsu0Y
+## Technologies Used
 
-cartoon-owl https://www.flaticon.com/free-sticker/owl-cartoon_6438096?term=animal&page=1&position=40&origin=search&related_id=6438096
+- Node.js
+- Express.js
+- HTML
+- JavaScript
+- EJS (Embedded JavaScript)
+- CSS
+- Tailwind CSS
+- Passport.js
 
-one-tree https://unsplash.com/illustrations/stylized-green-tree-with-brown-trunk-and-leaves-uBbB-8RHNbU
+### Attributions
 
-resort https://unsplash.com/illustrations/a-tropical-scene-with-beach-hut-and-mountains-9dR2lg5-gPE
+- Blue background by Slimane-Kadi from [Unsplash](https://unsplash.com/illustrations/abstract-blue-background-with-swirling-patterns-YSHUvXHsu0Y)
 
-skyline https://unsplash.com/illustrations/city-skyline-with-tall-buildings-at-sunset-o-REiKIcOjE
+- Sign up image by deep_erudite from [Unsplash](https://unsplash.com/illustrations/a-tropical-scene-with-beach-hut-and-mountains-9dR2lg5-gPE)
 
-gold https://unsplash.com/illustrations/abstract-swirling-patterns-in-brown-and-beige-tones-xQ80w9XYzck
-
-letter-m https://www.flaticon.com/free-icon/letter-m_5540520?term=letter+m&page=1&position=61&origin=search&related_id=5540520
-
-blue-cat-icon https://www.flaticon.com/free-icon/russian-blue-cat_6812367?term=blue+animal&page=1&position=54&origin=search&related_id=6812367
-
-panda-bear-icon https://www.flaticon.com/free-icon/panda-bear_9378015
-
-deer-icon https://www.flaticon.com/free-icon/deer_10738692
+- letter m logo by Laisa Islam Ani from [flaticon](https://www.flaticon.com/free-icon/letter-m_5540520?term=letter+m&page=1&position=61&origin=search&related_id=5540520)
