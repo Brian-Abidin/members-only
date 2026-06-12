@@ -13,7 +13,7 @@ This is a project that is a part of The Odin Project curriculum. This project em
 - Tailwind CSS
 - Passport.js
 
-### Attributions
+## Attributions
 
 - Blue background by Slimane-Kadi from [Unsplash](https://unsplash.com/illustrations/abstract-blue-background-with-swirling-patterns-YSHUvXHsu0Y)
 
