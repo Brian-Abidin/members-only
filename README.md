@@ -2,6 +2,8 @@
 
 This is a project that is a part of The Odin Project curriculum. This project emphasizes the use of the [**Passport.js**](https://www.passportjs.org) authentication middleware integrated in a website.
 
+Deployed using [Render](https://render.com) and [Neon](https://neon.com) as the database.
+
 ## Technologies Used
 
 - Node.js
@@ -12,6 +14,7 @@ This is a project that is a part of The Odin Project curriculum. This project em
 - CSS
 - Tailwind CSS
 - Passport.js
+- PostgreSQL
 
 ## Attributions
 
